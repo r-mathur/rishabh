@@ -38,6 +38,12 @@
       margin-bottom: 0;
       line-height: 1;
       font-weight: 700;
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: .15em;
+      border-right: .15em solid orange;
+      animation: typing 3.5s steps(40, end) forwards, blink-caret .75s step-end infinite;
     }
 
     .dot {
@@ -49,6 +55,8 @@
       margin: 18px;
       font-family: 'Muli', sans-serif;
       font-weight: normal;
+      opacity: 0;
+      animation: fadeInText 2s ease 4s forwards;
     }
 
     .icons {
@@ -77,17 +85,47 @@
       -webkit-transform: scale(1.2);
       text-decoration: none;
     }
+
+    /* The typing effect */
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    /* The typewriter cursor effect */
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: orange; }
+    }
+
+    /* Fade-in effect for "Put some text here" */
+    @keyframes fadeInText {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
   </style>
 </head>
 <body>
   <div class="wrapper">
-    <h1>coming soon<span class="dot">.</span></h1>
-    <p>Put some text here.</p>
+    <h1 id="typing-text">Rishabh Mathur</h1>
+    <p id="additional-text">Coming Soon</p>
     <div class="icons">
       <a href="https://www.linkedin.com/in/rishu106/"><i class="fab fa-linkedin"></i></a>
       <a href="https://twitter.com/RishabhM106"><i class="fab fa-twitter"></i></a>
       <a href="https://github.com/r-mathur/r-mathur"><i class="fab fa-github"></i></a>
     </div>
   </div>
+
+  <!-- Add typing sound script -->
+  <script>
+    // Function to simulate typing sound
+    function playTypingSound() {
+      const audio = new Audio('typing-sound.mp3'); // Replace with the actual path to your typing sound file
+      audio.play();
+    }
+
+    // Add event listener to trigger typing sound on each keyframe of the typing animation
+    document.getElementById('typing-text').addEventListener('animationiteration', playTypingSound);
+  </script>
 </body>
 </html>
