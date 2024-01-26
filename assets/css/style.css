@@ -1016,5 +1016,19 @@ section {
         #contact form .form-group textarea:focus, #contact form .form-group textarea:active {
           outline: none;
           box-shadow: none; }
+.download-button {
+    background-color: red;
+    color: white;
+    border: 2px solid red;
+    border-radius: 0px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.download-button:hover {
+    background-color: white;
+    color: red;
+}
+
 
 /*# sourceMappingURL=style.css.map */
