@@ -1023,6 +1023,7 @@ section {
     border-radius: 0px;
     padding: 10px 20px;
     cursor: pointer;
+    margin-right: 10px;
 }
 
 .download-button:hover {
@@ -1030,5 +1031,30 @@ section {
     color: red;
 }
 
+.whatsapp-button {
+            background-color: white;
+            color: green;
+            border: 2px solid white;
+            border-radius: 0px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
 
+.whatsapp-button:hover {
+            background-color: green;
+            color: white;
+        }
+.whatsapp-icon {
+            margin-right: 5px;
+        }
+
+
+.social-media ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .social-media a i {
+            font-size: 18px;
+        }
 /*# sourceMappingURL=style.css.map */

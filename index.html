@@ -9,6 +9,8 @@
             <link rel="stylesheet" href="assets/css/plugins/owl.carousel.min.css">
             <link rel="stylesheet" href="assets/font/flaticon.css">
             <link rel="stylesheet" href="assets/css/style.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
         </head>
         <!-- =================Body Started==================== -->
         <body>
@@ -38,8 +40,10 @@
                                 </div>
                                 <div class="social-media">
                                     <ul>
-                                        <li><a href = "https://www.linkedin.com/in/rishu106/" target="_blank"><i class="flaticon-linkedin"></i></a></li>
                                         <li><a href = "https://twitter.com/RishabhM106" target="_blank"><i class="flaticon-twitter"></i></a></li>
+                                        <li><a href = "https://www.linkedin.com/in/rishu106/" target="_blank"><i class="flaticon-linkedin"></i></a></li>
+                                        <li><a href="https://api.whatsapp.com/send?phone=919643470948" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                                        <li><a href="mailto:rishabhmathur106@outlook.com" target="_blank"><i class="far fa-envelope"></i></a></li>
                                     </ul>
                                 </div>
                                 <div onclick="show_menu()" class="my-toogle">
@@ -62,6 +66,9 @@
                                 </div>
                                 <div>
                                     <button class="download-button" onclick="downloadResume()">Download Resume</button>
+                                    <button class="whatsapp-button" onclick="startWhatsAppChat()">
+                                        <i class="fab fa-whatsapp whatsapp-icon"></i> Let's Chat
+                                    </button>
                                 </div>
                                 <div class="line"></div>
                             </div>
@@ -476,6 +483,12 @@
         // Replace 'assets/resume/RishabhMathur.pdf' with the actual link to your resume file
         window.open('assets/resume/RishabhMathur.pdf', '_blank');
     }
+    function startWhatsAppChat() {
+            // Replace 'your_phone_number' with your actual phone number
+            window.open('https://api.whatsapp.com/send?phone=919643470948', '_blank');
+        }
+
+
             </script>
 
 
