@@ -62,10 +62,12 @@
                                     <h3>Welcome to<span>Rishabh's RPA World</span></h3>
                                 </div>
                                 <div class="name-box">
-                                    <h1>Hello my name is  <span>Rishabh</span></h1>
+                                    <h1><span id="typed-text"></span> my name is  <span>Rishabh</span></h1>
                                 </div>
                                 <div>
-                                    <button class="download-button" onclick="downloadResume()">Download Resume</button>
+                                    <button class="download-button" onclick="downloadResume()">
+                                        Download Resume
+                                    </button>
                                     <button class="whatsapp-button" onclick="startWhatsAppChat()">
                                         <i class="fab fa-whatsapp whatsapp-icon"></i> Let's Chat
                                     </button>
@@ -490,6 +492,36 @@
 
 
             </script>
+
+        <script>
+    const texts = ["Hello","नमस्ते","Hey!", "Ahoy!"];
+    let count = 0;
+    let index = 0;
+    let currentText = "";
+    let letter = "";
+    let isDeleting = false;
+
+    (function type() {
+        if (count === texts.length) {
+            count = 0;
+        }
+        currentText = texts[count];
+        letter = isDeleting ? currentText.slice(0, --index) : currentText.slice(0, ++index);
+
+        document.getElementById('typed-text').textContent = letter;
+
+        if (letter.length === currentText.length && !isDeleting) {
+            isDeleting = true;
+            setTimeout(type, 1000); // Wait for 1 second after typing
+        } else if (letter.length === 0 && isDeleting) {
+            isDeleting = false;
+            count++;
+            setTimeout(type, 300); // Wait for 0.5 second after erasing
+        } else {
+            setTimeout(type, 100); // You can adjust the typing speed here
+        }
+    })();
+</script>
 
 
         </body>
