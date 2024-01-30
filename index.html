@@ -1,5 +1,5 @@
     <!doctype html>
-    <html lang="en">
+    <html lang="en" xmlns="http://www.w3.org/1999/html">
         <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -62,7 +62,7 @@
                                     <h3>Welcome to<span>Rishabh's RPA World</span></h3>
                                 </div>
                                 <div class="name-box">
-                                    <h1><span id="typed-text"></span> my name is  <span>Rishabh</span></h1>
+                                    <h1><span id="typed-text"></span><span id="cursor">|</span>my name</br>is <span>Rishabh</span></h1>
                                 </div>
                                 <div>
                                     <button class="download-button" onclick="downloadResume()">
@@ -494,12 +494,17 @@
             </script>
 
         <script>
-    const texts = ["Hello","नमस्ते","Hola!","Hey!", "Ahoy!"];
+    const texts = ["Hello!","नमस्ते","Hola!","Hey!", "Ahoy!"];
     let count = 0;
     let index = 0;
     let currentText = "";
     let letter = "";
     let isDeleting = false;
+
+    function updateCursorVisibility() {
+        const cursor = document.getElementById('cursor');
+        cursor.style.visibility = (cursor.style.visibility === 'visible') ? 'hidden' : 'visible';
+    }
 
     (function type() {
         if (count === texts.length) {
@@ -509,6 +514,7 @@
         letter = isDeleting ? currentText.slice(0, --index) : currentText.slice(0, ++index);
 
         document.getElementById('typed-text').textContent = letter;
+        updateCursorVisibility();
 
         if (letter.length === currentText.length && !isDeleting) {
             isDeleting = true;
@@ -516,9 +522,9 @@
         } else if (letter.length === 0 && isDeleting) {
             isDeleting = false;
             count++;
-            setTimeout(type, 300); // Wait for 0.5 second after erasing
+            setTimeout(type, 500); // Wait for 0.5 second after erasing
         } else {
-            setTimeout(type, 100); // You can adjust the typing speed here
+            setTimeout(type, 200); // You can adjust the typing speed here
         }
     })();
 </script>
